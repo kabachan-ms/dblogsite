@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'Dblog/login/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'Dblog/login/reset.css' %}">
+    <title>>ログイン</title>
+</head>
+
+<body>
+    <header class="page-header">
+        <div class="header-container">
+            <h1>Dブログ</h1>
+        </div>  
+        <div class="header-sinkitouroku">
+            <button type="button" onClick="nextPage();">新規登録</button>
+            <p><a href="{% url 'index' %}">新規登録</a></p><!--トップページに移動-->
+            
+        </div>
+    </header>
+    <div class="page-main">
+        <div class="main-container">
+
+    <div class="content">
+        <div class="loginform">
+        <h2>ログイン</h2>
+           <!-- ログインはPOST --><!--djangoのログイン機能-->
+           <tr>
+            {% latest_article_list %}
+            <td>{{ form.username.label_tag }}</td>
+            <td>{{ form.username }}</td>
+        </tr>
+        <tr>
+            <td>{{ form.password.label_tag }}</td>
+            <td>{{ form.password }}</td>
+        </tr>
+        <input type="submit" id="login_button" class="login_button" name="login_button" value="ログイン" onclick="location.href='/admin'" />
+        
+            
+            
+        </form>
+        </div>
+    </div>
+        </div>
+    
+    </div>
+
+
+
+</body>
+</html>
