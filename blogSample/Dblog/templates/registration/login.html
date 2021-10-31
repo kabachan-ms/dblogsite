@@ -29,15 +29,15 @@
         <h2>ログイン</h2>
            <!-- ログインはPOST --><!--djangoのログイン機能-->
            <tr>
-            {% latest_article_list %}
-            <td>{{ form.username.label_tag }}</td>
-            <td>{{ form.username }}</td>
+          
+            <form action="" method="POST">
+                {{ form.as_p }}
+                {% csrf_token %}
+                
+                <input type="submit" id="login_button" class="login_button" name="login_button" value="login">
+            </form>
         </tr>
-        <tr>
-            <td>{{ form.password.label_tag }}</td>
-            <td>{{ form.password }}</td>
-        </tr>
-        <input type="submit" id="login_button" class="login_button" name="login_button" value="ログイン" onclick="location.href='/admin'" />
+        
         
             
             
