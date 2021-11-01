@@ -1,6 +1,6 @@
 # from _typeshed import Self
 from django.db import models
-from mdeditor.fields import MDTextField # 追加
+from mdeditor.fields import MDTextField,MDTextFormField  # 追加
 from django.contrib.auth.models import User
 
 # Create your models here.
