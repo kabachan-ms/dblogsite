@@ -1,0 +1,14 @@
+.page-header{
+    padding: 0 16px;
+    background: linear-gradient(#60f380ed, #bffdbe 50%);
+    display:flex;
+    justify-content: space-between;
+}
+
+.blog-status1 p {
+    display: inline-block;
+}
+
+.blog-status2 p {
+    display: inline-block;
+}
