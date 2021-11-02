@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'Dblog/after_login/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'Dblog/after_login/style.css' %}">
+    <title>投稿</title>
+</head>
+<body>
+    <header class="page-header">
+        <div class="header-container">
+            <h1>Dブログ</h1>
+        </div> 
+        
+    <ul class="itiretu">
+         <!-- actionの後のurlをこのサイトのurlをいれるとこのサイト内での検索になるらしいです(多分）コピーで拾ってきましたごめんなさい -->
+         <!-- methodの部分もGETのサイトとPOSTのサイトがありました＞_＜ -->
+       <li><form method="GET" action=" "> 
+            <input type="search" name="keyword" placeholder="キーワードを入力">
+            <input type="submit" value="検索">
+        </form>
+        </li> 
+        <!-- ＃のところに同じフォルダ内にあるHTMLファイルにリンクする場合は、リンク先のパスに、そのファイル名を記述すればリンクできる らしいです？？？ -->
+        <li><a href="#">新規登録</a></li>
+        <li><a href="#">ログイン</a></li>
+    </ul>    
+    </header>
+    <div class="taitoru">
+    <h2>タイトル</h2>
+    </div>
+    <div class="namae">
+    <p>username</p>
+    </div>
+    <div class="hiduke">
+    <p>日付</p>
+    </div>
+    <div class="honbun">
+    <p id="markdown"></p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    document.getElementById('markdown').innerHTML =
+      marked('# Marked in the browser\n\nRendered by **marked**.');
+  </script>
+</body>
+</html>
