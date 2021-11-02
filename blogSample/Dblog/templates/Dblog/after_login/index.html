@@ -28,16 +28,21 @@
     </ul>    
     </header>
     <div class="taitoru">
-    <input type="text" placeholder="タイトルを入力" style="width: 500px; height: 50px;">
+    <h2>タイトル</h2>
     </div>
     <div class="namae">
-    <input type="text"　name="name" placeholder="username">
+    <p>username</p>
     </div>
     <div class="hiduke">
-    <input type="date">
+    <p>日付</p>
     </div>
     <div class="honbun">
-        <textarea rows="20" cols="100"></textarea>
-        </div>
+    <p id="markdown"></p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    document.getElementById('markdown').innerHTML =
+      marked('# Marked in the browser\n\nRendered by **marked**.');
+  </script>
 </body>
 </html>

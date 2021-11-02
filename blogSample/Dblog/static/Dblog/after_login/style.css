@@ -28,18 +28,15 @@ li{
     padding: 0;
 }
 .taitoru{
-    margin-left: 470px;
+    margin: 0 auto;
     margin-top: 20px;
     margin-bottom: 15px;
-    width: 500px; 
-    height: 50px;
-
+    text-align: center;
 }
 .namae , .hiduke{
-    overflow: hidden;
-    display: flex;
-    margin-left: 650px;
-  
+   
+    margin: 0 auto;
+    text-align: center;
 }
 .namae{
     margin-bottom: 15px;
