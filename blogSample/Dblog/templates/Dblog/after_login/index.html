@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'Dblog/after_login/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'Dblog/after_login/style.css' %}">
+    <title>投稿</title>
+</head>
+<body>
+    <header class="page-header">
+        <div class="header-container">
+            <h1>Dブログ</h1>
+        </div> 
+        
+    <ul class="itiretu">
+         <!-- actionの後のurlをこのサイトのurlをいれるとこのサイト内での検索になるらしいです(多分）コピーで拾ってきましたごめんなさい -->
+         <!-- methodの部分もGETのサイトとPOSTのサイトがありました＞_＜ -->
+       <li><form method="GET" action=" "> 
+            <input type="search" name="keyword" placeholder="キーワードを入力">
+            <input type="submit" value="検索">
+        </form>
+        </li> 
+        <!-- ＃のところに同じフォルダ内にあるHTMLファイルにリンクする場合は、リンク先のパスに、そのファイル名を記述すればリンクできる らしいです？？？ -->
+        <li><a href="#">新規登録</a></li>
+        <li><a href="#">ログイン</a></li>
+    </ul>    
+    </header>
+    <div class="taitoru">
+    <input type="text" placeholder="タイトルを入力" style="width: 500px; height: 50px;">
+    </div>
+    <div class="namae">
+    <input type="text"　name="name" placeholder="username">
+    </div>
+    <div class="hiduke">
+    <input type="date">
+    </div>
+    <div class="honbun">
+        <textarea rows="20" cols="100"></textarea>
+        </div>
+</body>
+</html>
