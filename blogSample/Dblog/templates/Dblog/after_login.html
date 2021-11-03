@@ -23,9 +23,17 @@
         </form>
         </li> 
         <!-- ＃のところに同じフォルダ内にあるHTMLファイルにリンクする場合は、リンク先のパスに、そのファイル名を記述すればリンクできる らしいです？？？ -->
+        {% if user.is_authenticated %}
+
+            {{ user.username }}さん、こんにちは。
+            {% else %}
+
+            <p>ログインしてね</p>
+
+            {% endif %}
         <li><a href="{% url 'makeBlog' %}">新規ブログ作成</a></li>
         <li><a href="{% url 'Mypage_top' %}">マイページ</a></li>
-        <li><a href="#">ログアウト</a></li><!--djangoでログアウトの処理を追加する-->
+        <li><a href="{% url 'logout' %}">ログアウト</a></li><!--ログアウトの処理 settings.pyで指定したページへ遷移-->
     </ul>    
     </header>
     <div class="taitoru">
