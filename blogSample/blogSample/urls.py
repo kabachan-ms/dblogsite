@@ -24,6 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url('mdeditor/', include('mdeditor.urls')), 
     path('accounts/', include('django.contrib.auth.urls')),# 追加
+    path('Dblog/', include('django.contrib.auth.urls')),
+    
 ]
 
 if settings.DEBUG:

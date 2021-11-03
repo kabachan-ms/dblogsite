@@ -13,9 +13,10 @@ urlpatterns = [
     path('<int:question_id>/vote/', views.vote, name='vote'),
     # cintrib.authを有効にする
     path('accounts/', include('django.contrib.auth.urls')),
-    path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('post/new', views.post_new, name='post_new'),
-   
+    path('after_login', views.after_login , name='after_login'),# Dblog/after_login
+    path('makeBlog/', views.makeBlog, name='makeBlog')# Dblog/makeBlog
+    
    
 ]

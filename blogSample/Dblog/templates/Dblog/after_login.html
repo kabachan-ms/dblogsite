@@ -23,8 +23,9 @@
         </form>
         </li> 
         <!-- ＃のところに同じフォルダ内にあるHTMLファイルにリンクする場合は、リンク先のパスに、そのファイル名を記述すればリンクできる らしいです？？？ -->
-        <li><a href="#">新規登録</a></li>
-        <li><a href="#">ログイン</a></li>
+        <li><a href="{% url 'makeBlog' %}">新規ブログ作成</a></li>
+        <li><a href="#">マイページ</a></li>
+        <li><a href="#">ログアウト</a></li><!--djangoでログアウトの処理を追加する-->
     </ul>    
     </header>
     <div class="taitoru">

@@ -36,3 +36,8 @@ def post_new(request):
         postForm = PostForm()
     return render(request, 'Dblog/makeBlog.html', {'postForm': postForm})
 
+def after_login(request):
+    return render(request, 'Dblog/after_login.html')#urls.pyでパスを記述するための関数
+
+def makeBlog(request):
+    return render(request , 'Dblog/makeBlog.html')
