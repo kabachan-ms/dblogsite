@@ -41,3 +41,7 @@ def after_login(request):
 
 def makeBlog(request):
     return render(request , 'Dblog/makeBlog.html')
+
+def Mypage_top(request):
+    return render(request , 'Dblog/Mypage_top.html')
+
