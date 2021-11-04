@@ -16,7 +16,6 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('post/new', views.post_new, name='post_new'),
     path('after_login', views.after_login , name='after_login'),# Dblog/after_login
-    path('makeBlog/', views.makeBlog, name='makeBlog'),# Dblog/makeBlog
     path('Mypage_top/', views.Mypage_top, name='Mypage_top'),
     
    
