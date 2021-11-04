@@ -18,14 +18,8 @@
             <h1>Dブログ</h1>
         </div> 
         <div class="header-login">
-            {% if user.is_authenticated %}
-
-            {{ user.username }}さん、こんにちは。
-            {% else %}
-
-            <p>ログインしてね</p>
-
-            {% endif %}
+            
+            
             <button type="button" action="{% url 'login' %}">ログイン</button>
             <p><a href="{% url 'login' %}"　class="btn">ログイン</a></p><!--ログインページに移動-->
         </div>
@@ -39,23 +33,13 @@
             
            <form method="POST" >
             {% csrf_token %}
-            {% for field in form %}
-                    {{field.as_hidden}}
-                    {% endfor %}
-            <label>ユーザーID</label>
-            {{form.cleaned_data.username}}
-            <label>パスワード</label>
+            {{form.as_p}}
+               
            
-            <label>パスワード(確認)</label>
+            <input type="submit" id="signup_button" class="signup_button" name="signup_button" value="登録">
            
-            
-          </form>    
-                </body>
-              
-           <div class="button">
-            <button type="button" onClick="nextPage();">登録</button>
-           </div> 
-        
+        </form>    
+    </body>
 
          </div>
          <div class="moji">

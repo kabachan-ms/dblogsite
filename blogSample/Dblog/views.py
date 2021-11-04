@@ -9,8 +9,7 @@ from django.contrib.auth.models import User
 from .forms import PostForm
 
 
-def index(request):
-    return render(request, 'Dblog/index.html')
+
 
 def detail(request, question_id):
     return HttpResponse("You're looking at question %s." % question_id)
@@ -52,3 +51,16 @@ def makeBlog(request):
 def Mypage_top(request):
     return render(request , 'Dblog/Mypage_top.html')
 
+def signup(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+    else:
+        form = UserCreationForm()
+
+    context = {'form':form}
+    return render(request, 'Dblog/index.html', context)
+        #ユーザー登録機能
+        #ユーザー登録に成功したらログインページへ遷移
