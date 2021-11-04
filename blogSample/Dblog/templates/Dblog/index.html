@@ -18,14 +18,8 @@
             <h1>Dブログ</h1>
         </div> 
         <div class="header-login">
-            {% if user.is_authenticated %}
-
-            {{ user.username }}さん、こんにちは。
-            {% else %}
-
-            <p>ログインしてね</p>
-
-            {% endif %}
+            
+            
             <button type="button" action="{% url 'login' %}">ログイン</button>
             <p><a href="{% url 'login' %}"　class="btn">ログイン</a></p><!--ログインページに移動-->
         </div>
@@ -42,7 +36,7 @@
             {{form.as_p}}
                
            
-            <input type="submit" id="signup_button" class="signup_button" name="signup_button" value="signup">
+            <input type="submit" id="signup_button" class="signup_button" name="signup_button" value="登録">
            
         </form>    
     </body>
