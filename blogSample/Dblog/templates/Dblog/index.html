@@ -18,8 +18,16 @@
             <h1>Dブログ</h1>
         </div> 
         <div class="header-login">
-            <button type="button" onClick="nextPage();">ログイン</button>
-            <p><a href="{% url 'login' %}">ログイン</a></p><!--ログインページに移動-->
+            {% if user.is_authenticated %}
+
+            {{ user.username }}さん、こんにちは。
+            {% else %}
+
+            <p>ログインしてね</p>
+
+            {% endif %}
+            <button type="button" action="{% url 'login' %}">ログイン</button>
+            <p><a href="{% url 'login' %}"　class="btn">ログイン</a></p><!--ログインページに移動-->
         </div>
     </header>
    

@@ -27,12 +27,21 @@ def post_new(request):
         postForm = PostForm(request.POST)
         if postForm.is_valid():
             postForm = postForm.save(commit=False)
-            # reauest�Ƀ��[�U�[�����܂߂���悤�ɂ���K�v������
+            # reauestにユーザ情報を含められるようにする必要がある
             # postForm.author = request.username
             # postForm.published_date = timezone.now()
             # postForm.save()
-            # �L�����쐬������}�C�y�[�W�g�b�v�֑J�ڂ�����H
+            # 記事を作成したらマイページトップに遷移するようにする
     else:
         postForm = PostForm()
     return render(request, 'Dblog/makeBlog.html', {'postForm': postForm})
+
+def after_login(request):
+    return render(request, 'Dblog/after_login.html')#urls.pyでパスを記述するための関数
+
+def makeBlog(request):
+    return render(request , 'Dblog/makeBlog.html')
+
+def Mypage_top(request):
+    return render(request , 'Dblog/Mypage_top.html')
 
