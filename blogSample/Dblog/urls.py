@@ -4,7 +4,7 @@ from . import views
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', views.signup, name='index'),
     # ex: /polls/5/
     path('<int:question_id>/', views.detail, name='detail'),
     # ex: /polls/5/results/
