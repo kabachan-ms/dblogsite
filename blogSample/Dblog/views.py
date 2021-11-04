@@ -23,6 +23,13 @@ def vote(request, question_id):
     return HttpResponse("You're voting on question %s." % question_id)
 
 def post_new(request):
+    # ユーザー名の取得は以下で可能
+    user = request.user
+    if user.is_active:
+        print(user.username)
+    else:
+        print("can't get user information.")
+
     if request.method == "POST":
         postForm = PostForm(request.POST)
         if postForm.is_valid():
