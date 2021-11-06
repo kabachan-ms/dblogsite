@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+
 <html lang="ja">
     
 <head>
@@ -19,9 +20,12 @@
         </div> 
         <div class="header-login">
             
+            <form action="{% url 'login' %}">
+            {% csrf_token %}
             
-            <button type="button" action="{% url 'login' %}">ログイン</button>
-            <p><a href="{% url 'login' %}"　class="btn">ログイン</a></p><!--ログインページに移動-->
+            <button type="submit" name="login_button">ログイン</button>
+           
+        </form>
         </div>
     </header>
    
