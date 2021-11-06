@@ -1,0 +1,13 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+.page-header {
+  padding: 0 16px;
+  background: linear-gradient(#60f380ed, #bffdbe 50%);
+  display: flex;
+  justify-content: space-between;
+}
+
+
