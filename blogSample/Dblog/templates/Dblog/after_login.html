@@ -23,14 +23,10 @@
         </form>
         </li> 
         <!-- ＃のところに同じフォルダ内にあるHTMLファイルにリンクする場合は、リンク先のパスに、そのファイル名を記述すればリンクできる らしいです？？？ -->
-        {% if user.is_authenticated %}
+        {% if user.is_authenticated %}<!--ログイン時の表示-->
 
             {{ user.username }}さん、こんにちは。
-            {% else %}
-
-            <p>ログインしてね</p>
-
-            {% endif %}
+               
         <li><form action="{% url 'post_new' %}">
             {% csrf_token %}
         <button type="submit" name="makeblog_botton">新規ブログ作成</button></form></li>
@@ -40,6 +36,16 @@
         <li><form action="{% url 'logout' %}">
             {% csrf_token %}
         <button type="submit" name="logout_botton">ログアウト</button></form></li><!--ログアウトの処理 settings.pyで指定したページへ遷移-->
+        {% else %}<!--未ログイン時の表示-->
+            <p>ログインしてね</p>
+        <li><form action="{% url 'login' %}">
+            {% csrf_token %}
+        <button type="submit" name="login_button">ログイン</button></form></li>
+        <li><form action="{% url 'index' %}">
+            {% csrf_token %}
+        <button type="submit" name="signup_button">新規登録</button></form></li>
+        {% endif %}
+
     </ul>    
     </header>
     <div class="taitoru">
