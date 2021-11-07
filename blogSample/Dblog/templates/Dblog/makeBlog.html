@@ -1,11 +1,33 @@
-{% extends 'Dblog/base.html' %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="ja">
 
-{% block content %}
-<h2>New post</h2>
-<form method="POST" class="post-form">
-    {% csrf_token %}
-    {{ postForm.media }}
-    {{ postForm.as_p }}
-    <button type="submit" class="save btn btn-default">Save</button>
-</form>
-{% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'Dblog/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'Dblog/reset.css' %}">
+
+    <title>ブログ編集</title>
+</head>
+
+<body>
+    <header class="page-header">
+        <div class="header-container">
+            <h1>Dブログ</h1>
+        </div>
+    </header>
+    {% block content %}
+    <h2>タイトル</h2>
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{ postForm.media }}
+        {{postForm.title}}
+        {{postForm.content}}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+    {% endblock %}
+</body>
+
+</html>
