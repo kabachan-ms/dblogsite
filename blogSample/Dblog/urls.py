@@ -4,7 +4,7 @@ from . import views
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    path('', views.signup, name='index'),
+    path('', views.signup, name='index'),#index.htmlにsignupを表示させるためのパス
     # ex: /polls/5/
     path('<int:question_id>/', views.detail, name='detail'),
     # ex: /polls/5/results/
@@ -17,6 +17,9 @@ urlpatterns = [
     path('post/new', views.post_form, name='post_form'),
     path('after_login', views.after_login , name='after_login'),# Dblog/after_login
     path('Mypage_top/', views.Mypage_top, name='Mypage_top'),
+    path('templates/', views.btn, name='btn'),
+    path('', views.btn, name='btn'),
     
+   
    
 ]

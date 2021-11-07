@@ -58,6 +58,7 @@ def makeBlog(request):
 def Mypage_top(request):
     return render(request , 'Dblog/Mypage_top.html')
 
+
 def signup(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
@@ -69,5 +70,12 @@ def signup(request):
 
     context = {'form':form}
     return render(request, 'Dblog/index.html', context)
-        #????????
-        #??????????????????????
+
+        #ユーザー登録機能
+        #ユーザー登録に成功したらログインページへ遷移
+
+def btn(request):
+    #request.GETメソッドtextを取得する。
+    if request.method == "POST":
+        if 'login_button' in request.POST:
+            return redirect(request,'Dblog/after_login/html')

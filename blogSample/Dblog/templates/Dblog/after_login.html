@@ -31,9 +31,15 @@
             <p>ログインしてね</p>
 
             {% endif %}
-        <li><a href="{% url 'post_form' %}">新規ブログ作成</a></li>
-        <li><a href="{% url 'Mypage_top' %}">マイページ</a></li>
-        <li><a href="{% url 'logout' %}">ログアウト</a></li><!--ログアウトの処理 settings.pyで指定したページへ遷移-->
+        <li><form action="{% url 'post_form' %}">
+            {% csrf_token %}
+        <button type="submit" name="makeblog_botton">新規ブログ作成</button></form></li>
+        <li><form action="{% url 'Mypage_top' %}">
+            {% csrf_token %}
+        <button type="submit" name="mypagetop_botton">マイページ</button></form></li>
+        <li><form action="{% url 'logout' %}">
+            {% csrf_token %}
+        <button type="submit" name="logout_botton">ログアウト</button></form></li><!--ログアウトの処理 settings.pyで指定したページへ遷移-->
     </ul>    
     </header>
     <div class="taitoru">
