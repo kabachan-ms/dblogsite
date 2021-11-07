@@ -19,12 +19,12 @@
         </div>
     </header>
     {% block content %}
-    <h2>新規作成</h2>
-    <form method="POST" class="post-form">
+    <h2>タイトル</h2>
+    <form method="POST" action="">
         {% csrf_token %}
         {{ postForm.media }}
-        <input type="text">
-        {{postForm.text}}
+        {{postForm.title}}
+        {{postForm.content}}
         <button type="submit" class="save btn btn-default">Save</button>
     </form>
     {% endblock %}
