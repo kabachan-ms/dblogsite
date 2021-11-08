@@ -1,26 +1,11 @@
-from django.http import HttpResponse
-from django.views.generic import TemplateView
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect, resolve_url, reverse
-from django.contrib.auth import login, authenticate
-from django.views.generic import CreateView
-from django.contrib.auth.models import User
+from django.shortcuts import render, redirect
 from .forms import PostForm
+from django.contrib.auth.decorators import login_required
 
 
 
-
-def detail(request, question_id):
-    return HttpResponse("You're looking at question %s." % question_id)
-
-def results(request, question_id):
-    response = "You're looking at the results of question %s."
-    return HttpResponse(response % question_id)
-
-def vote(request, question_id):
-    return HttpResponse("You're voting on question %s." % question_id)
-
+@login_required
 def post_new(request):
     if request.method == "POST":
         postForm = PostForm(request.POST)
@@ -38,11 +23,12 @@ def post_new(request):
 def after_login(request):
     return render(request, 'Dblog/after_login.html')#urls.pyでパスを記述するための関数
 
-def makeBlog(request):
-    return render(request , 'Dblog/makeBlog.html')
-
+@login_required
 def Mypage_top(request):
     return render(request , 'Dblog/Mypage_top.html')
+
+def top(request):
+    return render(request , 'Dblog/top.html')
 
 
 def signup(request):
@@ -59,10 +45,7 @@ def signup(request):
         #ユーザー登録機能
         #ユーザー登録に成功したらログインページへ遷移
 
-def btn(request):
-    #request.GETメソッドtextを取得する。
-    if request.method == "POST":
-        if 'login_button' in request.POST:
-            return redirect(request,'Dblog/after_login/html')
+
+
         
 

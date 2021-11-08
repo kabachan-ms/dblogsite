@@ -65,7 +65,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+   
 ]
+
 
 ROOT_URLCONF = 'blogSample.urls'
 
@@ -155,6 +157,6 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = '/Dblog/after_login'# ログインに成功したときのページ
+LOGIN_REDIRECT_URL = '/Dblog/viewblog/'# ログインに成功したときのページ
 LOGIN_URL = '/Dblog/'
-LOGOUT_REDIRECT_URL = '/Dblog/after_login'
+LOGOUT_REDIRECT_URL = '/Dblog/viewblog/'
