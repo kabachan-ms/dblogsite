@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 
 
 @login_required
-def post_new(request):
+def post_form(request):
     if request.method == "POST":
         postForm = PostForm(request.POST)
         if postForm.is_valid():
