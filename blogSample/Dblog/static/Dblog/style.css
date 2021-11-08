@@ -1,59 +1,186 @@
-@charset "utf-8";
 *,
-*::before,
-*::after {
+::before,
+::after {
   box-sizing: border-box;
 }
+.page-header {
+  padding: 0px 16px;
+  background: linear-gradient(rgba(96, 243, 128, 0.93), rgb(191, 253, 190) 50%);
+  display: flex;
+  justify-content: space-between;
+}
+h1 {
+  padding: 15px;
+  margin: 15px 0;
+}
+ul {
+  list-style: none;
+  /* overflow: hidden; */
+  display: flex;
+}
+li {
+  margin: 10px;
+}
+.itiretu {
+  align-items: center;
+  margin: 15px 0px 15px;
+  padding: 0px;
+}
+.itiretu li a,
+.common_btn {
+  text-decoration: none;
+  color: rgb(51, 51, 51);
+  text-align: center;
+  padding: 10px;
+  border: 1px solid rgb(151, 151, 151);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px 0px, rgb(255, 255, 255) 0px 2px 0px 0px inset;
+  border-radius: 6px;
+}
 
-.page-header{
-    padding: 0 16px;
-    background: linear-gradient(#60f380ed, #bffdbe 50%);
-    display:flex;
-    justify-content: space-between;
-}
-.moji{
-  margin: 30px;
-  padding: 60px;
-  margin-bottom: 30px;
-}
-.header-login {
-    text-align:right;
-    margin:10px 0px 0px;
-    display:inline-block;
-}
-.loginform{
-    display: block;
-    background:#f7f7f7;
-    width:100%;
-    height:100%;
-    max-width: 500px;
-    padding: 50px;
-    border: 1px solid #f1e6e6;
-    float: right;
-    margin: 0px 150px 0 0;
-
+.common_btn.blog_stauts {
+  margin-top: 10px;
 }
 
-.loginform h2{
-    color:#000000;
-    text-align:center;
-    margin-bottom: 30px;
-  }
-  
-  .loginform input {
-      display: block;
-      padding:15px;
-      border-radius: 30px;
-      margin-bottom: 30px;
-      width:100%;
-     }
-  .loginform button{
-    padding: 10px;
-    border-radius: 30px;
-  }
-  .button{
-    text-align: center;
-  }
-     .content {
-      margin: 100px 0 0 0;
-    }
+.itiretu li input[type="search"],
+.common_text {
+  padding: 10px;
+  border: 1px solid #979797;
+  box-shadow: 0 1px 3px #ccc inset;
+  border-radius: 2px;
+}
+
+.itiretu li input[type="submit"] {
+  padding: 10px;
+  border: 1px solid rgb(151, 151, 151);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px 0px, rgb(255, 255, 255) 0px 2px 0px 0px inset;
+  border-radius: 6px;
+  color: #333;
+}
+
+.itiretu li a.login,
+.common_btn {
+  background-image: linear-gradient(rgb(242, 242, 242) 0%, rgb(212, 212, 212) 100%);
+}
+.itiretu li a.create {
+  background-image: linear-gradient(rgb(216, 216, 216) 0%, rgb(179, 179, 179) 100%);
+}
+.home-latest {
+  margin: 60px auto;
+  max-width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.latest-item img {
+  width: 300px;
+  height: auto;
+}
+.latest-item h2 a {
+  font-size: 30px;
+  text-decoration: none;
+  color: rgb(51, 51, 51);
+}
+.latest-item .username {
+  margin: 5px 0px;
+}
+.latest-item .username,
+.latest-item time {
+  font-size: 14px;
+  color: rgb(157, 157, 157);
+}
+
+/* satoshiさん用CSS */
+input[type="text"] {
+  width: 60%;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #747474;
+}
+.header_h1 {
+  padding: 10px;
+}
+.header_logout {
+  background-image: linear-gradient(180deg, #d8d8d8 0%, #838282 100%);
+  border: 1px solid #979797;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), inset 0 2px 0 0 #ffffff;
+  border-radius: 6px;
+  height: 50%;
+  width: 10%;
+  text-align: center;
+  padding: 0.5em;
+  margin: 1em;
+}
+.blog-status p {
+  display: inline-block;
+}
+.blog-title {
+  margin: 0 150px 0 0;
+}
+main.box {
+  margin: 60px auto;
+  max-width: 800px;
+}
+
+.blog_list {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+}
+
+.blog_list li {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.blog_list li .left_content {
+  display: flex;
+  align-items: baseline;
+}
+
+.blog_list li .left_content h2 {
+  margin: 0;
+  margin-left: 10px;
+}
+
+.blog_list li .left_content h2 a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.blog_list li .right_content {
+  display: flex;
+  align-items: baseline;
+}
+
+.blog_list li .right_content div {
+  margin-left: 5px;
+}
+
+.blog_list li .right_content div.update_date {
+  margin-left: 10px;
+}
+
+.blog_list li .right_content div .common_btn2 {
+  display: inline-block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  border-radius: 6px;
+}
+
+.common_btn2 {
+  display: inline-block;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #333;
+  font-size: 14px;
+  margin: 0 3px;
+}
+
+.common_btn2.delete {
+  border: 1px solid red;
+}
