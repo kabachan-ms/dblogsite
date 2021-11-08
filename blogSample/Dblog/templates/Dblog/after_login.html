@@ -28,9 +28,7 @@
             {{ user.username }}さん、こんにちは。
 
                
-        <li><form action="{% url 'post_new' %}">
-          {% csrf_token %}
-        <button type="submit" name="makeblog_botton">新規ブログ作成</button></form></li>
+        
         <li><form action="{% url 'post_form' %}">
             {% csrf_token %}
         <button type="submit" name="makeblog_botton">新規ブログ作成</button></form></li>

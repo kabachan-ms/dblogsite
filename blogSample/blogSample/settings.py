@@ -157,6 +157,6 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = '/Dblog/viewblog/'# ログインに成功したときのページ
-LOGIN_URL = '/Dblog/'
-LOGOUT_REDIRECT_URL = '/Dblog/viewblog/'
+LOGIN_REDIRECT_URL = '/Dblog/top/'# ログインに成功したときのページ
+LOGIN_URL = '/Dblog/login/'
+LOGOUT_REDIRECT_URL = '/Dblog/top/'
