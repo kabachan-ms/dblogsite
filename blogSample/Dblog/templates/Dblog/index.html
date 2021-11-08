@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+
 <html lang="ja">
     
 <head>
@@ -18,8 +19,13 @@
             <h1>Dブログ</h1>
         </div> 
         <div class="header-login">
-            <button type="button" onClick="nextPage();">ログイン</button>
-            <p><a href="{% url 'login' %}">ログイン</a></p><!--ログインページに移動-->
+            
+            <form action="{% url 'login' %}">
+            {% csrf_token %}
+            
+            <button type="submit" name="login_button">ログイン</button>
+           
+        </form>
         </div>
     </header>
    
@@ -31,23 +37,13 @@
             
            <form method="POST" >
             {% csrf_token %}
-            {% for field in form %}
-                    {{field.as_hidden}}
-                    {% endfor %}
-            <label>ユーザーID</label>
-            {{form.cleaned_data.username}}
-            <label>パスワード</label>
+            {{form.as_p}}
+               
            
-            <label>パスワード(確認)</label>
+            <input type="submit" id="signup_button" class="signup_button" name="signup_button" value="登録">
            
-            
-          </form>    
-                </body>
-              
-           <div class="button">
-            <button type="button" onClick="nextPage();">登録</button>
-           </div> 
-        
+        </form>    
+    </body>
 
          </div>
          <div class="moji">
