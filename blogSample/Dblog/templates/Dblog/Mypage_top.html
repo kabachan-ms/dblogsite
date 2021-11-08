@@ -1,39 +1,413 @@
 <!DOCTYPE html>
 <html>
-    <head class="page-header">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=divice-width">
-        <title>Dブログやで</title>
-        <link rel="stylesheet" href="CSS/style.css">
-    </head>
-    <body>
-        <header>
-            <h1>Dブログ</h1>
-        </header>
-        <div class="saerch">
-            <input type="text" name="text" placeholder="記事を検索">
-            <button type="button" onClick="nextPage();">検索</button>
-        </div>
-        <hr>
-        <div class="blog-status1">
-            <p>ブログ名</p>
-            <p>公開</p>
-            <p>更新日</p>
-            <p>2021/10/20</p>
-            <button type="button" onClick="nextPage();">編集</button>
-            <button type="button" onClick="nextPage();">公開/非公開</button>
-            <button type="button" onClick="nextPage();">リンクをコピーする</button>
-            <button type="button" onClick="nextPage();">削除</button>
-        </div>
-        <div class="blog-status2">
-            <p>ブログ名</p>
-            <p>下書き</p>
-            <p>更新日</p>
-            <p>2021/10/20</p>
-            <button type="button" onClick="nextPage();">編集</button>
-            <button type="button" onClick="nextPage();">公開/非公開</button>
-            <button type="button" onClick="nextPage();">リンクをコピーする</button>
-            <button type="button" onClick="nextPage();">削除</button>
-        </div>
-    </body>
+
+<head class="page-header">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=divice-width">
+  <link rel="stylesheet" href="../../static/Dblog/mypageTop/Mypage_top.css">
+  <link rel="stylesheet" href="../../static/Dblog/mypageTop/style.css">
+  <link rel="stylesheet" href="../../static/Dblog/reset.css">
+  <title>Dブログ</title>
+</head>
+
+<body>
+  <header class="page-header">
+    <div class="header-container">
+      <h1>Dブログ</h1>
+    </div>
+    <ul class="itiretu">
+      <!-- actionの後のurlをこのサイトのurlをいれるとこのサイト内での検索になるらしいです(多分）コピーで拾ってきましたごめんなさい -->
+      <!-- methodの部分もGETのサイトとPOSTのサイトがありました＞_＜ -->
+      <li>
+        <form method="GET" action=" ">
+          <input type="search" name="keyword" placeholder="キーワードを入力">
+          <input type="submit" value="検索">
+        </form>
+      </li>
+      <!-- ＃のところに同じフォルダ内にあるHTMLファイルにリンクする場合は、リンク先のパスに、そのファイル名を記述すればリンクできる らしいです？？？ -->
+      <li><a class="create" href="#">新規登録</a></li>
+      <li><a class="login" href="#">ログイン</a></li>
+    </ul>
+  </header>
+  <main class="box">
+    <form method="get" action="" class="saerch">
+      <input type="text" name="text" class="common_text" placeholder="記事を検索">
+      <input type="submit" value="絞り込み検索" class="common_btn">
+    </form>
+    <hr>
+    <form method="get" action="" class="saerch sort">
+      <select name="blog-status" class="blog_stauts common_btn" required>
+        <option value="">公開ステータス</option>
+        <option value="下書き">下書き</option>
+        <option value="公開">公開</option>
+        <option value="非公開">非公開</option>
+      </select>
+    </form>
+
+    <form method="get" action="" class="blog_form">
+      <ul class="blog_list">
+        <li>
+          <div class="left_content">
+            <input type="checkbox" name="blog_list_1">
+            <h2 class="blog_name">
+              <a href="#">ブログの名前</a>
+            </h2>
+          </div>
+          <div class="right_content">
+            <div class="status">
+              下書き
+            </div>
+            <div class="update_date">
+              更新日 2021/01/01
+            </div>
+            <div class="edit">
+              <a href="#" class="common_btn2">編集</a>
+            </div>
+            <div class="delete">
+              <a href="#" class="common_btn2 delete">削除</a>
+            </div>
+            <div class="public">
+              <a href="#" class="common_btn2">公開/非公開</a>
+            </div>
+
+          </div>
+        </li>
+        <li>
+          <div class="left_content">
+            <input type="checkbox" name="blog_list_1">
+            <h2 class="blog_name">
+              <a href="#">ブログの名前</a>
+            </h2>
+          </div>
+          <div class="right_content">
+            <div class="status">
+              下書き
+            </div>
+            <div class="update_date">
+              更新日 2021/01/01
+            </div>
+            <div class="edit">
+              <a href="#" class="common_btn2">編集</a>
+            </div>
+            <div class="delete">
+              <a href="#" class="common_btn2 delete">削除</a>
+            </div>
+            <div class="public">
+              <a href="#" class="common_btn2">公開/非公開</a>
+            </div>
+
+          </div>
+        </li>
+        <li>
+          <div class="left_content">
+            <input type="checkbox" name="blog_list_1">
+            <h2 class="blog_name">
+              <a href="#">ブログの名前</a>
+            </h2>
+          </div>
+          <div class="right_content">
+            <div class="status">
+              下書き
+            </div>
+            <div class="update_date">
+              更新日 2021/01/01
+            </div>
+            <div class="edit">
+              <a href="#" class="common_btn2">編集</a>
+            </div>
+            <div class="delete">
+              <a href="#" class="common_btn2 delete">削除</a>
+            </div>
+            <div class="public">
+              <a href="#" class="common_btn2">公開/非公開</a>
+            </div>
+
+          </div>
+        </li>
+        <li>
+          <div class="left_content">
+            <input type="checkbox" name="blog_list_1">
+            <h2 class="blog_name">
+              <a href="#">ブログの名前</a>
+            </h2>
+          </div>
+          <div class="right_content">
+            <div class="status">
+              下書き
+            </div>
+            <div class="update_date">
+              更新日 2021/01/01
+            </div>
+            <div class="edit">
+              <a href="#" class="common_btn2">編集</a>
+            </div>
+            <div class="delete">
+              <a href="#" class="common_btn2 delete">削除</a>
+            </div>
+            <div class="public">
+              <a href="#" class="common_btn2">公開/非公開</a>
+            </div>
+
+          </div>
+        </li>
+        <li>
+          <div class="left_content">
+            <input type="checkbox" name="blog_list_1">
+            <h2 class="blog_name">
+              <a href="#">ブログの名前</a>
+            </h2>
+          </div>
+          <div class="right_content">
+            <div class="status">
+              下書き
+            </div>
+            <div class="update_date">
+              更新日 2021/01/01
+            </div>
+            <div class="edit">
+              <a href="#" class="common_btn2">編集</a>
+            </div>
+            <div class="delete">
+              <a href="#" class="common_btn2 delete">削除</a>
+            </div>
+            <div class="public">
+              <a href="#" class="common_btn2">公開/非公開</a>
+            </div>
+
+          </div>
+        </li>
+        <li>
+          <div class="left_content">
+            <input type="checkbox" name="blog_list_1">
+            <h2 class="blog_name">
+              <a href="#">ブログの名前</a>
+            </h2>
+          </div>
+          <div class="right_content">
+            <div class="status">
+              下書き
+            </div>
+            <div class="update_date">
+              更新日 2021/01/01
+            </div>
+            <div class="edit">
+              <a href="#" class="common_btn2">編集</a>
+            </div>
+            <div class="delete">
+              <a href="#" class="common_btn2 delete">削除</a>
+            </div>
+            <div class="public">
+              <a href="#" class="common_btn2">公開/非公開</a>
+            </div>
+
+          </div>
+        </li>
+        <li>
+          <div class="left_content">
+            <input type="checkbox" name="blog_list_1">
+            <h2 class="blog_name">
+              <a href="#">ブログの名前</a>
+            </h2>
+          </div>
+          <div class="right_content">
+            <div class="status">
+              下書き
+            </div>
+            <div class="update_date">
+              更新日 2021/01/01
+            </div>
+            <div class="edit">
+              <a href="#" class="common_btn2">編集</a>
+            </div>
+            <div class="delete">
+              <a href="#" class="common_btn2 delete">削除</a>
+            </div>
+            <div class="public">
+              <a href="#" class="common_btn2">公開/非公開</a>
+            </div>
+
+          </div>
+        </li>
+        <li>
+          <div class="left_content">
+            <input type="checkbox" name="blog_list_1">
+            <h2 class="blog_name">
+              <a href="#">ブログの名前</a>
+            </h2>
+          </div>
+          <div class="right_content">
+            <div class="status">
+              下書き
+            </div>
+            <div class="update_date">
+              更新日 2021/01/01
+            </div>
+            <div class="edit">
+              <a href="#" class="common_btn2">編集</a>
+            </div>
+            <div class="delete">
+              <a href="#" class="common_btn2 delete">削除</a>
+            </div>
+            <div class="public">
+              <a href="#" class="common_btn2">公開/非公開</a>
+            </div>
+
+          </div>
+        </li>
+        <li>
+          <div class="left_content">
+            <input type="checkbox" name="blog_list_1">
+            <h2 class="blog_name">
+              <a href="#">ブログの名前</a>
+            </h2>
+          </div>
+          <div class="right_content">
+            <div class="status">
+              下書き
+            </div>
+            <div class="update_date">
+              更新日 2021/01/01
+            </div>
+            <div class="edit">
+              <a href="#" class="common_btn2">編集</a>
+            </div>
+            <div class="delete">
+              <a href="#" class="common_btn2 delete">削除</a>
+            </div>
+            <div class="public">
+              <a href="#" class="common_btn2">公開/非公開</a>
+            </div>
+
+          </div>
+        </li>
+        <li>
+          <div class="left_content">
+            <input type="checkbox" name="blog_list_1">
+            <h2 class="blog_name">
+              <a href="#">ブログの名前</a>
+            </h2>
+          </div>
+          <div class="right_content">
+            <div class="status">
+              下書き
+            </div>
+            <div class="update_date">
+              更新日 2021/01/01
+            </div>
+            <div class="edit">
+              <a href="#" class="common_btn2">編集</a>
+            </div>
+            <div class="delete">
+              <a href="#" class="common_btn2 delete">削除</a>
+            </div>
+            <div class="public">
+              <a href="#" class="common_btn2">公開/非公開</a>
+            </div>
+
+          </div>
+        </li>
+        <li>
+          <div class="left_content">
+            <input type="checkbox" name="blog_list_1">
+            <h2 class="blog_name">
+              <a href="#">ブログの名前</a>
+            </h2>
+          </div>
+          <div class="right_content">
+            <div class="status">
+              下書き
+            </div>
+            <div class="update_date">
+              更新日 2021/01/01
+            </div>
+            <div class="edit">
+              <a href="#" class="common_btn2">編集</a>
+            </div>
+            <div class="delete">
+              <a href="#" class="common_btn2 delete">削除</a>
+            </div>
+            <div class="public">
+              <a href="#" class="common_btn2">公開/非公開</a>
+            </div>
+
+          </div>
+        </li>
+        <li>
+          <div class="left_content">
+            <input type="checkbox" name="blog_list_1">
+            <h2 class="blog_name">
+              <a href="#">ブログの名前</a>
+            </h2>
+          </div>
+          <div class="right_content">
+            <div class="status">
+              下書き
+            </div>
+            <div class="update_date">
+              更新日 2021/01/01
+            </div>
+            <div class="edit">
+              <a href="#" class="common_btn2">編集</a>
+            </div>
+            <div class="delete">
+              <a href="#" class="common_btn2 delete">削除</a>
+            </div>
+            <div class="public">
+              <a href="#" class="common_btn2">公開/非公開</a>
+            </div>
+
+          </div>
+        </li>
+        <li>
+          <div class="left_content">
+            <input type="checkbox" name="blog_list_1">
+            <h2 class="blog_name">
+              <a href="#">ブログの名前</a>
+            </h2>
+          </div>
+          <div class="right_content">
+            <div class="status">
+              下書き
+            </div>
+            <div class="update_date">
+              更新日 2021/01/01
+            </div>
+            <div class="edit">
+              <a href="#" class="common_btn2">編集</a>
+            </div>
+            <div class="delete">
+              <a href="#" class="common_btn2 delete">削除</a>
+            </div>
+            <div class="public">
+              <a href="#" class="common_btn2">公開/非公開</a>
+            </div>
+
+          </div>
+        </li>
+      </ul>
+    </form>
+
+    <!-- <div class="blog-status">
+      <p class="blog-title">ブログ名</p>
+      <p>公開</p>
+      <p>更新日</p>
+      <p>2021/10/20</p>
+      <button type="button" onClick="location.href='#'">編集</button>
+      <button type="button" onClick="location.href='#'">公開/非公開</button>
+      <button type="button" onClick="location.href='#'">リンクをコピー</button>
+      <button type="button" onClick="location.href='#'">削除</button>
+    </div>
+    <div class="blog-status">
+      <p>ブログ名</p>
+      <p>下書き</p>
+      <p>更新日</p>
+      <p>2021/10/20</p>
+      <button type="button" onClick="nextPage();">編集</button>
+      <button type="button" onClick="nextPage();">公開/非公開</button>
+      <button type="button" onClick="nextPage();">リンクをコピー</button>
+      <button type="button" onClick="nextPage();">削除</button>
+    </div> -->
+  </main>
+</body>
+
 </html>
