@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'Dblog/after_login/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'Dblog/after_login/style.css' %}">
+    <title>投稿</title>
+</head>
+<body>
+    <header class="page-header">
+        <div class="header-container">
+            <h1>Dブログ</h1>
+        </div> 
+        
+    <ul class="itiretu">
+         <!-- actionの後のurlをこのサイトのurlをいれるとこのサイト内での検索になるらしいです(多分）コピーで拾ってきましたごめんなさい -->
+         <!-- methodの部分もGETのサイトとPOSTのサイトがありました＞_＜ -->
+       <li><form method="GET" action=" "> 
+            <input type="search" name="keyword" placeholder="キーワードを入力">
+            <input type="submit" value="検索">
+        </form>
+        </li> 
+        <!-- ＃のところに同じフォルダ内にあるHTMLファイルにリンクする場合は、リンク先のパスに、そのファイル名を記述すればリンクできる らしいです？？？ -->
+        {% if user.is_authenticated %}<!--ログイン時の表示-->
+
+            {{ user.username }}さん、こんにちは。
+               
+        <li><form action="{% url 'post_new' %}">
+            {% csrf_token %}
+        <button type="submit" name="makeblog_botton">新規ブログ作成</button></form></li>
+        <li><form action="{% url 'Mypage_top' %}">
+            {% csrf_token %}
+        <button type="submit" name="mypagetop_botton">マイページ</button></form></li>
+        <li><form action="{% url 'logout' %}">
+            {% csrf_token %}
+        <button type="submit" name="logout_botton">ログアウト</button></form></li><!--ログアウトの処理 settings.pyで指定したページへ遷移-->
+        {% else %}<!--未ログイン時の表示-->
+            <p>ログインしてね</p>
+        <li><form action="{% url 'login' %}">
+            {% csrf_token %}
+        <button type="submit" name="login_button">ログイン</button></form></li>
+        <li><form action="{% url 'index' %}">
+            {% csrf_token %}
+        <button type="submit" name="signup_button">新規登録</button></form></li>
+        {% endif %}
+    </ul>    
+</header>
+{% block content %}
+
+</body>
+</html>
+{% endblock %}
