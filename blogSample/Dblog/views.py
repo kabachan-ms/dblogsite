@@ -10,7 +10,7 @@ def post_form(request):
     if request.method == "POST":
         postForm = PostForm(request.POST)
         if postForm.is_valid():
-            postForm = postForm.save()
+            postForm = postForm.save(commit=False)
             # reauestにユーザ情報を含められるようにする必要がある
             # postForm.author = request.username
             # postForm.published_date = timezone.now()
