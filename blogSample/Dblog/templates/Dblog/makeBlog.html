@@ -7,7 +7,10 @@
 <form method="POST" class="post-form">
     {% csrf_token %}
     {{ postForm.media }}
-    {{ postForm.as_p }}
+    <!-- {{ postForm.as_p }} -->
+    {{postForm.title.label}}
+    {{postForm.title}}
+    {{postForm.content}}
     <button type="submit" class="save btn btn-default">Save</button>
 </form>
 {% endblock %}
