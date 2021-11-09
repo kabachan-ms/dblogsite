@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
 
 <head class="page-header">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=divice-width">
-  <link rel="stylesheet" href="../../static/Dblog/mypageTop/Mypage_top.css">
-  <link rel="stylesheet" href="../../static/Dblog/mypageTop/style.css">
-  <link rel="stylesheet" href="../../static/Dblog/reset.css">
+  <link rel="stylesheet" href="{% static 'Dblog/mypageTop/Mypage_top.css' %}">
+  <link rel="stylesheet" href="{% static 'Dblog/mypageTop/style.css' %}">
+  <link rel="stylesheet" href="{% static 'Dblog/reset.css' %}">
   <title>Dブログ</title>
 </head>
 
@@ -25,8 +26,12 @@
         </form>
       </li>
       <!-- ＃のところに同じフォルダ内にあるHTMLファイルにリンクする場合は、リンク先のパスに、そのファイル名を記述すればリンクできる らしいです？？？ -->
-      <li><a class="create" href="#">新規登録</a></li>
-      <li><a class="login" href="#">ログイン</a></li>
+      <li><form class="create" action="{% url 'index' %}">
+        {% csrf_token %}
+        <button type="submit" name="toppage_botton">トップページ</button></form></li>
+      <li><form class= "logout" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit" name="logout_botton">ログアウト</button></form></li><!--ログアウトの処理 settings.pyで指定したページへ遷移-->
     </ul>
   </header>
   <main class="box">
