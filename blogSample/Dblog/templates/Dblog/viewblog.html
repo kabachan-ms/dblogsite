@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'Dblog/after_login/reset.css' %}">
-    <link rel="stylesheet" href="{% static 'Dblog/after_login/style.css' %}">
+    <link rel="stylesheet" href="{% static 'Dblog/viewblog/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'Dblog/viewblog/style.css' %}">
     <title>投稿</title>
 </head>
 <body>
@@ -27,8 +27,6 @@
 
             {{ user.username }}さん、こんにちは。
 
-               
-        
         <li><form action="{% url 'post_form' %}">
             {% csrf_token %}
         <button type="submit" name="makeblog_botton">新規ブログ作成</button></form></li>
@@ -43,7 +41,7 @@
         <li><form action="{% url 'login' %}">
             {% csrf_token %}
         <button type="submit" name="login_button">ログイン</button></form></li>
-        <li><form action="{% url 'index' %}">
+        <li><form action="{% url 'signin' %}">
             {% csrf_token %}
         <button type="submit" name="signup_button">新規登録</button></form></li>
         {% endif %}
