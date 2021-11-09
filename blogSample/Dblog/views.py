@@ -10,7 +10,7 @@ def post_form(request):
     if request.method == "POST":
         postForm = PostForm(request.POST)
         if postForm.is_valid():
-            postForm = postForm.save(commit=False)
+            postForm = postForm.save()
             # reauestにユーザ情報を含められるようにする必要がある
             # postForm.author = request.username
             # postForm.published_date = timezone.now()
@@ -26,9 +26,6 @@ def after_login(request):
 @login_required
 def Mypage_top(request):
     return render(request , 'Dblog/Mypage_top.html')
-
-def top(request):
-    return render(request , 'Dblog/top.html')
 
 def signin(request):
     return render(request, 'Dblog/signin.html')
