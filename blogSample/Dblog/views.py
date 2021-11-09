@@ -21,7 +21,7 @@ def post_form(request):
     return render(request, 'Dblog/makeBlog.html', {'postForm': postForm})
 
 def after_login(request):
-    return render(request, 'Dblog/after_login.html')#urls.pyでパスを記述するための関数
+    return render(request, 'Dblog/viewblog.html')#urls.pyでパスを記述するための関数
 
 @login_required
 def Mypage_top(request):
@@ -30,6 +30,11 @@ def Mypage_top(request):
 def top(request):
     return render(request , 'Dblog/top.html')
 
+def signin(request):
+    return render(request, 'Dblog/signin.html')
+
+def index(request):
+    return render(request, 'Dblog/index.html')
 
 def signup(request):
     if request.method == 'POST':
@@ -41,7 +46,7 @@ def signup(request):
         form = UserCreationForm()
 
     context = {'form':form}
-    return render(request, 'Dblog/index.html', context)
+    return render(request, 'Dblog/signin.html', context)
         #ユーザー登録機能
         #ユーザー登録に成功したらログインページへ遷移
 

@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'Dblog/after_login/reset.css' %}">
-    <link rel="stylesheet" href="{% static 'Dblog/after_login/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'Dblog/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'Dblog/reset.css' %}">
     <title>投稿</title>
 </head>
 <body>
@@ -41,9 +41,9 @@
         <li><form action="{% url 'login' %}">
             {% csrf_token %}
         <button type="submit" name="login_button">ログイン</button></form></li>
-        <li><form action="{% url 'index' %}">
+        <li><form action="{% url 'signin' %}">
             {% csrf_token %}
-        <button type="submit" name="signup_button">新規登録</button></form></li>
+        <button type="submit" name="signin">新規登録</button></form></li>
         {% endif %}
     </ul>    
 </header>
