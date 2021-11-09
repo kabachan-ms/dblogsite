@@ -27,9 +27,6 @@ def after_login(request):
 def Mypage_top(request):
     return render(request , 'Dblog/Mypage_top.html')
 
-def top(request):
-    return render(request , 'Dblog/top.html')
-
 def signin(request):
     return render(request, 'Dblog/signin.html')
 
