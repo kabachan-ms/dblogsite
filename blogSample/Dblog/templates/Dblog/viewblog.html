@@ -49,16 +49,16 @@
     </ul>    
     </header>
     <div class="taitoru">
-    <h2>タイトル</h2>
+    <h2>{{ blog.title }}</h2>
     </div>
     <div class="namae">
-    <p>username</p>
+    <p>{{ blog.username }}</p>
     </div>
     <div class="hiduke">
-    <p>日付</p>
+    <p>{{ blog.create }}</p>
     </div>
     <div class="honbun">
-    <p id="markdown"></p>
+    <p id="markdown">{{ blog.content }}</p>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>

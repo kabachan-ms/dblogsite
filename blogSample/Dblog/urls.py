@@ -13,9 +13,8 @@ urlpatterns = [
     path('post/form', views.post_form, name='post_form'),
     path('viewblog/', views.after_login , name='viewblog'),
     path('Mypage_top/', views.Mypage_top, name='Mypage_top'),
-   
-    
-   
+    path('templates/', views.index, name='blogs'),
+    path('viewblog/<int:blog_id>',views.after_login, name='viewblog'),
     
    
    

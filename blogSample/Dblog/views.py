@@ -33,8 +33,9 @@ def post_form(request):
         postForm = PostForm()
     return render(request, 'Dblog/makeBlog.html', {'postForm': postForm})
 
-def after_login(request):
-    return render(request, 'Dblog/viewblog.html')#urls.pyでパスを記述するための関数
+def after_login(request,blog_id):
+    blog = Article.objects.get(id=blog_id)
+    return render(request, 'Dblog/viewblog.html', {'blog': blog})#urls.pyでパスを記述するための関数
 
 @login_required
 def Mypage_top(request):
@@ -44,7 +45,8 @@ def signin(request):
     return render(request, 'Dblog/signin.html')
 
 def index(request):
-    return render(request, 'Dblog/index.html')
+    blogs = Article.objects.order_by()#DBからデータを取得するメソッド
+    return render(request, 'Dblog/index.html', {'blogs': blogs})
 
 def signup(request):
     if request.method == 'POST':
