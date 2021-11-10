@@ -7,20 +7,6 @@ import datetime
 
 
 @login_required
-# def post_form(request):
-#     if request.method == "POST":
-#         postForm = PostForm(request.POST)
-#         if postForm.is_valid():
-#             postForm = postForm.save(commit=False)
-#             # reauestにユーザ情報を含められるようにする必要がある
-#             # postForm.author = request.username
-#             # postForm.published_date = timezone.now()
-#             # postForm.save()
-#             # 記事を作成したらマイページトップに遷移するようにする
-#     else:
-#         postForm = PostForm()
-#     return render(request, 'Dblog/makeBlog.html', {'postForm': postForm})
-
 def post_form(request):
     user = request.user
     postForm = PostForm(request.POST)
