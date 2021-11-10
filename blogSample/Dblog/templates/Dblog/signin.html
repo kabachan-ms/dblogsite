@@ -13,47 +13,50 @@
 <body>
     <header class="page-header">
         <div class="header-container">
-            <h1>Dブログ</h1>
+            <h1>守屋の秘訣日記</h1>
         </div>
         <ul class="itiretu">
             <!-- actionの後のurlをこのサイトのurlをいれるとこのサイト内での検索になるらしいです(多分）コピーで拾ってきましたごめんなさい -->
             <!-- methodの部分もGETのサイトとPOSTのサイトがありました＞_＜ -->
             
             <!-- ＃のところに同じフォルダ内にあるHTMLファイルにリンクする場合は、リンク先のパスに、そのファイル名を記述すればリンクできる らしいです？？？ -->
-            
             <li><form action="{% url 'login' %}">
                 {% csrf_token %}
             <button type="submit" name="login_button">ログイン</button></form></li>
-        </ul>
+         </ul>
     </header>
    
 
       <div class="content">
          <div class="loginform">
-            <h2>Dブログに登録する</h2>
+            <h2>守屋の秘訣日記に登録する</h2>
            <!-- ログインはPOST -->
            <form method="POST" >
             {% csrf_token %}
-            {{form.as_p}}
-               
-           
+            <div class="form">{{form.as_p}}</div>
+            <!-- <form action="" method="post"> -->
+            <!-- <input type="text" name="email" placeholder="email"> -->
+            <!-- <input type="text" name="id" placeholder="id"> -->
+            <!-- <input class="password" type="password" name="password" placeholder="password"> -->
+            <!-- <ul class="itiretu"> -->
+            <!-- <li><a class="login" href="#">登録</a></li> -->
+            
             <input type="submit" id="signup_button" class="signup_button" name="signup_button" value="登録">
-           
-        </form>  
+                </form>
 
          </div>
          <div class="moji">
-            <h1>Dブログへようこそ </h1>
+            <h1>守屋の秘訣日記へようこそ </h1>
                 
-            <p>Dブログでは、制作をする人、それを応援する人
+            <p>守屋の秘訣日記では、守屋のように美肌になりたい人、賢くなりたい人
                 <br>
-                ものづくりが好きなみんなのための街のような場所。
+                守屋の事が好きなみんなのための街のような場所。
                 <br>
-                好みのクリエイターやコンテンツを見つけたり、
+                守屋に近づくためのヒントを見つけたり、
                 <br>
-                自分のつくりたいものをつくったりして楽しめます。
+                守屋の誕生秘話まで幅広くお楽しみいただけます。
                 <br>
-                いっしょに、創作の輪を広げていきましょう。
+                いっしょに、守屋の輪を広げていきましょう。
             </p>
     
         </div>
