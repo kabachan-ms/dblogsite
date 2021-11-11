@@ -10,7 +10,7 @@
             <img src="img/noimg.jpg" alt="何も入ってない時に画像表示される">
             <h2><a href="{% url 'viewblog' blog_id=blog.id %}">{{ blog.title }}</a></h2>
             <p class="username">{{ blog.username }}</p>
-            <time datetime="2011-12-03">{{ blog.creeated }}</time>
+            <time datetime="2011-12-03">{{ blog.created }}</time>
         </div>
         <!-- ↓for文で記事の件数分取得して上記の処理を繰り返すため以下の記述は不要 -->
         <!-- <div class="latest-item">

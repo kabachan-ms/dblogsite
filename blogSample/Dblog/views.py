@@ -39,7 +39,8 @@ def after_login(request,blog_id):
 
 @login_required
 def Mypage_top(request):
-    return render(request , 'Dblog/Mypage_top.html')
+    blogs = Article.objects.order_by()
+    return render(request , 'Dblog/Mypage_top.html',{'blogs': blogs})
 
 def signin(request):
     return render(request, 'Dblog/signin.html')
