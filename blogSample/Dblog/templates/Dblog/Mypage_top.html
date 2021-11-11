@@ -49,22 +49,22 @@
       </select>
     </form>
 
-    <form method="get" action="" class="blog_form">
+    <form method="get" action="" class="blog_form"> 
+        {% for blog in blogs %} 
       <ul class="blog_list">
         <li>
+           
           <div class="left_content">
             <input type="checkbox" name="blog_list_1">
             <h2 class="blog_name">
-              <a href="#">ブログの名前</a>
+              <a href="#">{{ blog.title }}</a>
             </h2>
           </div>
           <div class="right_content">
             <div class="status">
               下書き
             </div>
-            <div class="update_date">
-              更新日 2021/01/01
-            </div>
+            <div class="update_date">更新日{{ blog.created }}</div>
             <div class="edit">
               <a href="#" class="common_btn2">編集</a>
             </div>
@@ -76,6 +76,7 @@
             </div>
 
           </div>
+<!--pythonのfor文で上記の内容を繰り返し処理をするので以下の記述は不要           
         </li>
         <li>
           <div class="left_content">
@@ -388,9 +389,11 @@
             </div>
 
           </div>
-        </li>
+        </li> -->
       </ul>
+      {% endfor %}
     </form>
+    
 
     <!-- <div class="blog-status">
       <p class="blog-title">ブログ名</p>
