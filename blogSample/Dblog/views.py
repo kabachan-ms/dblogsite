@@ -29,6 +29,7 @@ def post_form(request):
                 is_delete=0,
                 is_private=0,
             )
+        return redirect('Mypage_top')
     else:
         postForm = PostForm()
     return render(request, 'Dblog/makeBlog.html', {'postForm': postForm})
