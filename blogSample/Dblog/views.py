@@ -40,7 +40,11 @@ def after_login(request,blog_id):
 
 @login_required
 def Mypage_top(request):
-    blogs = Article.objects.order_by()
+    user = request.user
+    if user.is_active:
+        blogs = Article.objects.filter(username_id = user.username)
+    else:
+        blogs = Article.objects.order_by()
     return render(request , 'Dblog/Mypage_top.html',{'blogs': blogs})
 
 def signin(request):
