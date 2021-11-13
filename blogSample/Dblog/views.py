@@ -47,7 +47,13 @@ def signin(request):
     return render(request, 'Dblog/signin.html')
 
 def index(request):
-    blogs = Article.objects.order_by()#DBからデータを取得するメソッド
+    # blogs = Article.objects.order_by()#DBからデータを取得するメソッド
+    user = request.user
+    if user.is_active:
+        blogs = Article.objects.filter(username_id = user.username)
+    else:
+        blogs = Article.objects.order_by()
+
     return render(request, 'Dblog/index.html', {'blogs': blogs})
 
 def signup(request):
