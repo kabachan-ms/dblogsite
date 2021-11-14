@@ -9,12 +9,6 @@ import datetime
 @login_required
 def post_form(request):
     user = request.user
-    postForm = PostForm(request.POST)
-    if user.is_active:
-        print(user.username)
-    else:
-        print("can't get user information.")
-
     if request.method == "POST":
         postForm = PostForm(request.POST)
         if postForm.is_valid():
@@ -33,6 +27,27 @@ def post_form(request):
     else:
         postForm = PostForm()
     return render(request, 'Dblog/makeBlog.html', {'postForm': postForm})
+
+def post_edit(request,blog_id):
+
+    if request.method == "POST":
+        postForm = PostForm(request.POST)
+        if postForm.is_valid():
+            article = Article(
+                id = blog_id,
+                title = postForm.cleaned_data['title'],
+                content = postForm.cleaned_data['content'],
+                username_id = request.user,
+                created = datetime.datetime.now(),
+                is_delete = 0,
+                is_private = 0,
+            )
+            article.save()
+        return redirect('Mypage_top')
+    else:
+        blog = Article.objects.get(id = blog_id)
+        postForm = PostForm(initial={'title': blog.title,'content': blog.content, 'username': request.user})
+    return render(request,'Dblog/makeBlog.html', {'postForm': postForm})
 
 def after_login(request,blog_id):
     blog = Article.objects.get(id=blog_id)
