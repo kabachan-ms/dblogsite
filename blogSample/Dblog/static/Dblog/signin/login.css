@@ -9,13 +9,12 @@ box-sizing: border-box;
     background: linear-gradient(rgba(96, 243, 128, 0.93), rgb(191, 253, 190) 50%);
     display: flex;
     justify-content: space-between;
-   
+  
   }
   h1 {
     padding: 15px;
     margin: 15px 0;
   }
-  
   
   li {
     list-style: none;
@@ -87,9 +86,9 @@ box-sizing: border-box;
       border-radius: 30px;
       margin-bottom: 30px;
       width:100%;
-     }
-     .password {
- 
+    }
+    .password {
+
       border: 1px solid #828282;
       margin: 10px;
     }
@@ -100,6 +99,6 @@ box-sizing: border-box;
   .button{
     text-align: center;
   }
-     .content {
+    .content {
       margin: 100px 0 0 0;
     }

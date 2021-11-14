@@ -2,7 +2,7 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+box-sizing: border-box;
 }
 .page-header{
     padding: 0 16px;
@@ -11,18 +11,17 @@
     justify-content: space-between;
 }
 h1{
-  padding: 10px;
+padding: 10px;
 }
 ul {
     list-style: none;
     overflow: hidden;
     display: flex;
-  }
+}
 li{
     margin: 10px;
 }
 .itietu {
-   
     align-items: center;
     margin: 0 0 30px 0;
     padding: 0;
@@ -34,7 +33,6 @@ li{
     text-align: center;
 }
 .namae , .hiduke{
-   
     margin: 0 auto;
     text-align: center;
 }
@@ -46,8 +44,8 @@ li{
     
 }
 .honbun{
-    
-    margin-left: 255px;
+    margin: 0 auto;
+    text-align: center;
     width: 872px;
     height: 524px;
     
