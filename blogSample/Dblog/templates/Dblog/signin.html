@@ -23,15 +23,14 @@
             <li><form action="{% url 'login' %}">
                 {% csrf_token %}
             <button type="submit" name="login_button">ログイン</button></form></li>
-         </ul>
+        </ul>
     </header>
-   
 
-      <div class="content">
-         <div class="loginform">
+    <div class="content">
+        <div class="loginform">
             <h2>守屋の秘訣日記に登録する</h2>
-           <!-- ログインはPOST -->
-           <form method="POST" >
+        <!-- ログインはPOST -->
+        <form method="POST" >
             {% csrf_token %}
             <div class="form">{{form.as_p}}</div>
             <!-- <form action="" method="post"> -->
@@ -44,11 +43,13 @@
             <input type="submit" id="signup_button" class="signup_button" name="signup_button" value="登録">
                 </form>
 
-         </div>
-         <div class="moji">
+        </div>
+        <div class="moji">
             <h1>守屋の秘訣日記へようこそ </h1>
                 
-            <p>守屋の秘訣日記では、守屋のように美肌になりたい人、賢くなりたい人
+            <p>守屋の秘訣日記では、守屋のように
+                <br>
+                美肌になりたい人、賢くなりたい人
                 <br>
                 守屋の事が好きなみんなのための街のような場所。
                 <br>
@@ -56,11 +57,11 @@
                 <br>
                 守屋の誕生秘話まで幅広くお楽しみいただけます。
                 <br>
-                いっしょに、守屋の輪を広げていきましょう。
+                一緒に、守屋の輪を広げていきましょう。
             </p>
     
         </div>
-      </div>
+    </div>
         
 </body>
 </html>

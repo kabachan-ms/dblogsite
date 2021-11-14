@@ -23,7 +23,6 @@ li{
     margin: 10px;
 }
 .itietu {
-   
     align-items: center;
     margin: 15px 0px 15px;
     padding: 0;
@@ -89,10 +88,10 @@ li{
     padding:15px;
     border-radius: 30px;
     margin-bottom: 30px;
+    margin-top: 15px;
     width:100%;
-   }
+  }
 .password {
- 
   border: 1px solid #828282;
   margin: 10px;
 }

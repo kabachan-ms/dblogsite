@@ -14,20 +14,19 @@
     <header class="page-header">
         <div class="header-container">
             <h1>守屋の秘訣日記</h1>
-        </div>
+        </div> 
+        
+    <ul class="itiretu">
+    <!-- actionの後のurlをこのサイトのurlをいれるとこのサイト内での検索になるらしいです(多分）コピーで拾ってきましたごめんなさい -->
+    <!-- methodの部分もGETのサイトとPOSTのサイトがありました＞_＜ -->
+    <li><form method="GET" action=" "> 
+            <input type="search" name="keyword" placeholder="キーワードを入力">
+            <input type="submit" value="検索">
+        </form>
+        </li> 
+        <!-- ＃のところに同じフォルダ内にあるHTMLファイルにリンクする場合は、リンク先のパスに、そのファイル名を記述すればリンクできる らしいです？？？ -->
+        {% if user.is_authenticated %}<!--ログイン時の表示-->
 
-        <ul class="itiretu">
-            <!-- actionの後のurlをこのサイトのurlをいれるとこのサイト内での検索になるらしいです(多分）コピーで拾ってきましたごめんなさい -->
-            <!-- methodの部分もGETのサイトとPOSTのサイトがありました＞_＜ -->
-            <li>
-                <form method="GET" action=" ">
-                    <input type="search" name="keyword" placeholder="キーワードを入力">
-                    <input type="submit" value="検索">
-                </form>
-            </li>
-            <!-- ＃のところに同じフォルダ内にあるHTMLファイルにリンクする場合は、リンク先のパスに、そのファイル名を記述すればリンクできる らしいです？？？ -->
-            {% if user.is_authenticated %}
-            <!--ログイン時の表示-->
 
             {{ user.username }}さん、こんにちは。
 
@@ -83,10 +82,12 @@
     <div class="honbun" >
         <p id="markdown"></p>
     </div>
+
     <div id="mdraw" style="display: none;">{{blog.content}}</div>
     <script>
         document.getElementById("markdown").innerHTML = marked(document.getElementById("mdraw").innerHTML);
     </script>
+
 </body>
 
 </html>
