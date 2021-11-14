@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="{% static 'Dblog/viewblog/style.css' %}">
     <title>投稿</title>
 </head>
+
 <body>
     <header class="page-header">
         <div class="header-container">
@@ -25,45 +27,67 @@
         <!-- ＃のところに同じフォルダ内にあるHTMLファイルにリンクする場合は、リンク先のパスに、そのファイル名を記述すればリンクできる らしいです？？？ -->
         {% if user.is_authenticated %}<!--ログイン時の表示-->
 
+
             {{ user.username }}さん、こんにちは。
 
-        <li><form action="{% url 'post_form' %}">
-            {% csrf_token %}
-        <button type="submit" name="makeblog_botton">新規ブログ作成</button></form></li>
-        <li><form action="{% url 'Mypage_top' %}">
-            {% csrf_token %}
-        <button type="submit" name="mypagetop_botton">マイページ</button></form></li>
-        <li><form action="{% url 'logout' %}">
-            {% csrf_token %}
-        <button type="submit" name="logout_botton">ログアウト</button></form></li><!--ログアウトの処理 settings.pyで指定したページへ遷移-->
-        {% else %}<!--未ログイン時の表示-->
+            <li>
+                <form action="{% url 'post_form' %}">
+                    {% csrf_token %}
+                    <button type="submit" name="makeblog_botton">新規ブログ作成</button>
+                </form>
+            </li>
+            <li>
+                <form action="{% url 'Mypage_top' %}">
+                    {% csrf_token %}
+                    <button type="submit" name="mypagetop_botton">マイページ</button>
+                </form>
+            </li>
+            <li>
+                <form action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit" name="logout_botton">ログアウト</button>
+                </form>
+            </li>
+            <!--ログアウトの処理 settings.pyで指定したページへ遷移-->
+            {% else %}
+            <!--未ログイン時の表示-->
             <p>ログインしてね</p>
-        <li><form action="{% url 'login' %}">
-            {% csrf_token %}
-        <button type="submit" name="login_button">ログイン</button></form></li>
-        <li><form action="{% url 'signin' %}">
-            {% csrf_token %}
-        <button type="submit" name="signup_button">新規登録</button></form></li>
-        {% endif %}
+            <li>
+                <form action="{% url 'login' %}">
+                    {% csrf_token %}
+                    <button type="submit" name="login_button">ログイン</button>
+                </form>
+            </li>
+            <li>
+                <form action="{% url 'signin' %}">
+                    {% csrf_token %}
+                    <button type="submit" name="signup_button">新規登録</button>
+                </form>
+            </li>
+            {% endif %}
 
-    </ul>    
+        </ul>
     </header>
+    <script src="https://cdn.jsdelivr.net/npm/marked@3.0.7/marked.min.js"></script>
+   
     <div class="taitoru">
-    <h2>{{ blog.title }}</h2>
+        <h2>{{ blog.title }}</h2>
     </div>
     <div class="namae">
-    <p>{{ blog.username }}</p>
+        <p>{{ blog.username }}</p>
     </div>
     <div class="hiduke">
-    <p>{{ blog.create }}</p>
+        <p>{{ blog.create }}</p>
     </div>
-    <div class="honbun">
-    <p id="markdown">{{ blog.content }}</p>
+    <div class="honbun" >
+        <p id="markdown"></p>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<script>
-    document.getElementById('markdown').innerHTML =
-      marked('# Marked in the browser\n\nRendered by **marked**.');
-</script>
+
+    <div id="mdraw" style="display: none;">{{blog.content}}</div>
+    <script>
+        document.getElementById("markdown").innerHTML = marked(document.getElementById("mdraw").innerHTML);
+    </script>
+
 </body>
+
 </html>
