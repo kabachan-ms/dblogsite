@@ -5,24 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" type="text/css" href="{% static 'Dblog/login/style.css' %}">
+    
     <link rel="stylesheet" type="text/css" href="{% static 'Dblog/login/reset.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'Dblog/signin/sinki.css' %}">
     <title>>ログイン</title>
 </head>
 
 <body>
     <header class="page-header">
         <div class="header-container">
-            <h1>Dブログ</h1>
+            <h1>守屋の秘訣日記</h1>
         </div>  
-        <div class="header-sinkitouroku">
-            <form action="{% url 'signin' %}">
+        <ul class="itiretu">
+            <li><form action="{% url 'signin' %}">
             {% csrf_token %}
-            <button type="submit" name="signup_button">新規登録</button>
-            
-            </form>
-        </div>
+            <button class="common_btn" type="submit" name="signup_button">新規登録</button></form></li>
+        </ul>
     </header>
+
     <div class="page-main">
         <div class="main-container">
 
