@@ -68,8 +68,9 @@
 
         </ul>
     </header>
+    {% if blog.is_private == False %}
     <script src="https://cdn.jsdelivr.net/npm/marked@3.0.7/marked.min.js"></script>
-   
+    
     <div class="taitoru">
         <h2>{{ blog.title }}</h2>
     </div>
@@ -87,6 +88,9 @@
     <script>
         document.getElementById("markdown").innerHTML = marked(document.getElementById("mdraw").innerHTML);
     </script>
+    
+    {% endif %} 
+
 
 </body>
 

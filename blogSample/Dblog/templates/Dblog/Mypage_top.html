@@ -62,7 +62,11 @@
           </div>
           <div class="right_content">
             <div class="status">
-              下書き
+              {% if blog.is_private == False %}
+                公開中
+              {% else %}
+                下書き
+              {% endif %}
             </div>
             <div class="update_date">更新日{{ blog.created }}</div>
             <div class="edit">
@@ -79,7 +83,18 @@
               </form>
             </div>
             <div class="public">
-              <a href="#" class="common_btn2">公開/非公開</a>
+              <!-- <a href="#" class="common_btn2">公開/非公開</a> -->
+              {% if blog.is_private == False %}
+              <form method="post" action="{% url 'private' blog.pk %}">
+                {% csrf_token %}  
+                <button class="common_btn2" type="submit" onclick='return confirm("非公開にしますか？");'>非公開</button> 
+              </form>
+              {% else %}
+              <form method="post" action="{% url 'public' blog.pk %}">
+                {% csrf_token %}  
+                <button class="common_btn2" type="submit" onclick='return confirm("記事を公開しますか？");'>公開</button> 
+              </form> 
+              {% endif %} 
             </div>
 
           </div>
