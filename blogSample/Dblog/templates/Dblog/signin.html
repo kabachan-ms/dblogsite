@@ -22,7 +22,7 @@
             <!-- ＃のところに同じフォルダ内にあるHTMLファイルにリンクする場合は、リンク先のパスに、そのファイル名を記述すればリンクできる らしいです？？？ -->
             <li><form action="{% url 'login' %}">
                 {% csrf_token %}
-            <button type="submit" name="login_button">ログイン</button></form></li>
+            <button class="common_btn" type="submit" name="login_button">ログイン</button></form></li>
         </ul>
     </header>
 
@@ -40,7 +40,7 @@
             <!-- <ul class="itiretu"> -->
             <!-- <li><a class="login" href="#">登録</a></li> -->
             
-            <input type="submit" id="signup_button" class="signup_button" name="signup_button" value="登録">
+            <input type="submit" id="signup_button" class="common_btn" name="signup_button" value="登録">
                 </form>
 
         </div>

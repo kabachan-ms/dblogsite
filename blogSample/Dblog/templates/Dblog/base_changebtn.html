@@ -29,21 +29,21 @@
                
         <li><form action="{% url 'post_form' %}">
             {% csrf_token %}
-        <button type="submit" name="makeblog_botton">新規ブログ作成</button></form></li>
+        <button class="common_btn" type="submit" name="makeblog_botton">新規ブログ作成</button></form></li>
         <li><form action="{% url 'Mypage_top' %}">
             {% csrf_token %}
-        <button type="submit" name="mypagetop_botton">マイページ</button></form></li>
+        <button class="common_btn" type="submit" name="mypagetop_botton">マイページ</button></form></li>
         <li><form action="{% url 'logout' %}">
             {% csrf_token %}
-        <button type="submit" name="logout_botton">ログアウト</button></form></li><!--ログアウトの処理 settings.pyで指定したページへ遷移-->
+        <button class="common_btn" type="submit" name="logout_botton">ログアウト</button></form></li><!--ログアウトの処理 settings.pyで指定したページへ遷移-->
         {% else %}<!--未ログイン時の表示-->
             <p>ログインしてね</p>
         <li><form action="{% url 'login' %}">
             {% csrf_token %}
-        <button type="submit" name="login_button">ログイン</button></form></li>
+        <button class="common_btn" type="submit" name="login_button">ログイン</button></form></li>
         <li><form action="{% url 'signin' %}">
             {% csrf_token %}
-        <button type="submit" name="signin">新規登録</button></form></li>
+        <button class="common_btn" type="submit" name="signin">新規登録</button></form></li>
         {% endif %}
     </ul>    
 </header>

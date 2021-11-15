@@ -17,7 +17,8 @@ urlpatterns = [
     path('templates/', views.index, name='blogs'),
     path('viewblog/<int:blog_id>',views.after_login, name='viewblog'),
     path('delete_blog/<int:blog_id>', views.delete_blog, name='delete_blog'),
-    
+    path('private/<int:blog_id>', views.private, name='private'),
+    path('public/<int:blog_id>', views.public, name='public'), 
    
    
 ]

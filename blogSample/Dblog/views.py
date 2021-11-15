@@ -1,5 +1,6 @@
 from django.contrib.auth.forms import UserCreationForm
-from django.shortcuts import render, redirect,get_object_or_404
+from django.http import request
+from django.shortcuts import render, redirect
 from .forms import PostForm
 from django.contrib.auth.decorators import login_required
 from .models import Article
@@ -54,8 +55,24 @@ def delete_blog(request, blog_id):
     if request.method == "POST":
 	    blog = Article.objects.get(id=blog_id)          
 	    blog.delete()    
-	    return redirect('index')
+	    return redirect('Mypage_top')
 
+def private(request, blog_id):
+    if request.method == "POST":
+        blog = Article.objects.get(id=blog_id)
+        if blog.is_private == False:         
+	        blog.is_private='True'
+        blog.save()
+        return redirect('Mypage_top')
+
+def public(request, blog_id):
+    if request.method == "POST":
+        blog = Article.objects.get(id=blog_id)
+        if blog.is_private == True:         
+	        blog.is_private='False'
+        blog.save()
+        return redirect('Mypage_top')
+    
 def after_login(request,blog_id):
     blog = Article.objects.get(id=blog_id)
     return render(request, 'Dblog/viewblog.html', {'blog': blog})#urls.pyでパスを記述するための関数
