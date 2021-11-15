@@ -26,12 +26,12 @@
         </form>
       </li>
       <!-- ＃のところに同じフォルダ内にあるHTMLファイルにリンクする場合は、リンク先のパスに、そのファイル名を記述すればリンクできる らしいです？？？ -->
-      <li><form class="create" action="{% url 'index' %}">
+      <li><form action="{% url 'index' %}">
         {% csrf_token %}
-        <button type="submit" name="toppage_botton">トップページ</button></form></li>
-      <li><form class= "logout" action="{% url 'logout' %}">
+        <button class="common_btn" type="submit" name="toppage_botton">トップページ</button></form></li>
+      <li><form action="{% url 'logout' %}">
         {% csrf_token %}
-        <button type="submit" name="logout_botton">ログアウト</button></form></li><!--ログアウトの処理 settings.pyで指定したページへ遷移-->
+        <button class="common_btn" type="submit" name="logout_botton">ログアウト</button></form></li><!--ログアウトの処理 settings.pyで指定したページへ遷移-->
     </ul>
   </header>
   <main class="box">
