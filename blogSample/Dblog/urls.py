@@ -16,6 +16,7 @@ urlpatterns = [
     path('Mypage_top/', views.Mypage_top, name='Mypage_top'),
     path('templates/', views.index, name='blogs'),
     path('viewblog/<int:blog_id>',views.after_login, name='viewblog'),
+    path('delete_blog/<int:blog_id>', views.delete_blog, name='delete_blog'),
     
    
    
