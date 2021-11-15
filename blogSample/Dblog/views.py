@@ -1,5 +1,5 @@
 from django.contrib.auth.forms import UserCreationForm
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,get_object_or_404
 from .forms import PostForm
 from django.contrib.auth.decorators import login_required
 from .models import Article
@@ -48,6 +48,13 @@ def post_edit(request,blog_id):
         blog = Article.objects.get(id = blog_id)
         postForm = PostForm(initial={'title': blog.title,'content': blog.content, 'username': request.user})
     return render(request,'Dblog/makeBlog.html', {'postForm': postForm})
+
+
+def delete_blog(request, blog_id):
+    if request.method == "POST":
+	    blog = Article.objects.get(id=blog_id)          
+	    blog.delete()    
+	    return redirect('index')
 
 def after_login(request,blog_id):
     blog = Article.objects.get(id=blog_id)

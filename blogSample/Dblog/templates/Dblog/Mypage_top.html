@@ -70,8 +70,13 @@
               <a href="{% url 'post_edit' blog_id=blog.id %}" class="common_btn2">編集</a>
               
             </div>
+    </form>
             <div class="delete">
-              <a href="#" class="common_btn2 delete">削除</a>
+              <!-- <a href="#" class="common_btn2 delete">削除</a> -->
+              <form method="post" action="{% url 'delete_blog' blog.pk %}">
+                {% csrf_token %}  
+                <button class="common_btn2 delete" type="submit" onclick='return confirm("削除しますか？");'>削除</button> 
+              </form>
             </div>
             <div class="public">
               <a href="#" class="common_btn2">公開/非公開</a>
@@ -394,7 +399,7 @@
         </li> -->
       </ul>
       {% endfor %}
-    </form>
+    
     
 
     <!-- <div class="blog-status">
